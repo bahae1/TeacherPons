@@ -44,6 +44,16 @@ class Point3D:
     #Commit 4: Determine quadrant
     def calculate_quadrant(self):
         #Devuelve 0 si está en el origen de coordenadas o sobre alguno de los ejes.
+        if self.get_x() == 0 or self.get_y() == 0 or self.get_z() == 0:
+            return 0
+        if self.get_x() > 0 and self.get_y() > 0:
+            return 1
+        if self.get_x() < 0 and self.get_y() > 0:
+            return 2
+        if self.get_x() < 0 and self.get_y() < 0:
+            return 3
+        if self.get_x() > 0 and self.get_y() < 0:
+            return 4
         #Devuelve 1 si está en el primer cuadrante (x e y positivos).
         #Devuelve 2 si está en el segundo cuadrante (x negativo e y positivo).
         #Devuelve 3 si está en el tercer cuadrante (x e y negativos).
