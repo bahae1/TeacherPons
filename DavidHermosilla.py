@@ -1,5 +1,5 @@
 #from numpy import sqrt
-
+import math
 
 class Point3D:
 
@@ -33,7 +33,7 @@ class Point3D:
         return 'Punto 3D (x=' + str(self.get_x()) + ',y=' + str(self.get_y()) + ',z=' + str(self.get_z()) + ')'
     #Commit 2: Distance to origin.
     def distance_to_origin(self):
-        pass
+        return math.sqrt((pow(self.get_x()) + pow(self.get_y()) + pow(self.get_z()))
 
 
     #Commit 3: Distance between 2 points.
