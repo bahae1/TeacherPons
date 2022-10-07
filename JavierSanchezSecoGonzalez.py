@@ -4,39 +4,42 @@ class Point3D:
 
     #A point is defined by 3 coordinates
     #Commit 1: __init__(constructor), setters, getters and __str__ (tostring)
-    def __init__(self, x, y, z):
-        self.x = x
-        self.y = y
-        self.z = z
-
-    #Commit 2: Distance to origin.
-    def distance_to_origin(self):
+    def __init__(self, punt_x, punt_y, punt_z):
+        self.punt_x = punt_x
+        self.punt_y = punt_y
+        self.punt_z = punt_z
+    
+    def __init__(self):
         pass
 
-    def get_x(self):
-        return self.x
-    
-    def set_x(self, x):
-        self.x = x
+     def get_x(self):
+        return self.punt_x
+
+    def set_x(self, punt_x):
+        self.punt_x = punt_x
 
     def get_y(self):
-        return self.y
-    
-    def set_y(self, y):
-        self.y = y
+        return self.punt_y
+
+    def set_y(self, punt_y):
+        self.punt_y = punt_y
 
     def get_z(self):
-        return self.z
+        return self.punt_z
 
-    def set_z(self, z):
-        self.z = z
+    def set_z(self, punt_z):
+        self.punt_z = punt_z
 
     def __str__(self):
         return str(self.get_x) + ", " + str(self.get_y) + ", " + str(self.get_z) + "."
 
+    #Commit 2: Distance to origin.
+    def distance_to_origin(self):
+        return math.sqrt(self.get_x()**2+self.get_y()**2+self.get_z()**2)
+
     #Commit 3: Distance between 2 points.
     def calculate_distance(self, point_2):
-        pass
+        return math.sqrt((point_2.get_x()-self.get_x())**2+(point_2.get_y()-self.get_y())**2)
 
     #Commit 4: Determine quadrant
     def calculate_quadrant(self):
