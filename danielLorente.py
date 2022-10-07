@@ -33,12 +33,12 @@ class Point3D:
 
     #Commit 2: Distance to origin.
     def distance_to_origin(self):
-        return sqrt((x2 - x1)**2 + (y2 - y1)**2 + (z2 - z1)**2)
+        return sqrt((self.x - 0)**2 + (self.y - 0)**2 + (self.z - 0)**2)
 
 
     #Commit 3: Distance between 2 points.
     def calculate_distance(self, point_2):
-        pass
+        return sqrt((self.x - point_2.get_x())**2 + (self.y - point_2.get_y())**2 + (self.z - point_2.get_z())**2)
 
     #Commit 4: Determine quadrant
     def calculate_quadrant(self):
