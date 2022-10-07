@@ -3,6 +3,7 @@
 
 class Point3D:
 
+
     #A point is defined by 3 coordinates
     def __init__(self, x, y, z):
         self.x = x
@@ -10,9 +11,41 @@ class Point3D:
         self.z = z
 
 
-    #Commit 1: __init__(constructor), setters, getters and __str__ (tostring)
     def __init__(self):
         pass
+
+
+    #Commit 1: __init__(constructor), setters, getters and __str__ (tostring)
+    def getX(self):
+        return self.x
+
+    def setX(self, x):
+        self.x = x
+
+
+    def getY(self):
+        return self.y
+
+    def setY(self, y):
+        self.y = y
+
+
+    def getZ(self):
+        return self.z
+
+    def setZ(self, z):
+        self.z = z
+
+
+
+    def __str__(self):
+        return self.x + ", " + self.y + ", " + self.z
+
+
+
+
+
+
 
     #Commit 2: Distance to origin.
     def distance_to_origin(self):
@@ -39,5 +72,4 @@ class Point3D:
 
 
 if __name__ == "__main__":
-    print("coso")
     pass
