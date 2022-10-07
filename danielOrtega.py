@@ -43,7 +43,10 @@ class Point3D:
 
     #Commit 3: Distance between 2 points.
     def calculate_distance(self, point_2):
-        pass
+    	x2 = point_2.x
+    	y2 = point_2.y
+    	z2 = point_2.z
+        return sqrt((x2-self.x)**2+(y2-self.y)**2+(z2-self.z)**2)
 
     #Commit 4: Determine quadrant
     def calculate_quadrant(self):
