@@ -1,5 +1,6 @@
 #from numpy import sqrt
 
+import math
 
 class Point3D:
 
@@ -34,12 +35,12 @@ class Point3D:
 
     #Commit 2: Distance to origin.
     def distance_to_origin(self):
-        pass
+        return math.sqrt(self.x**2 + self.y**2 + self.z**2)
 
 
     #Commit 3: Distance between 2 points.
     def calculate_distance(self, point_2):
-        pass
+        return math.sqrt((point_2.get_x - self.x)**2 + (point_2.get_y - self.y)**2 + (point_2.get_z - self.z)**2)
 
     #Commit 4: Determine quadrant
     def calculate_quadrant(self):
