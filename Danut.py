@@ -14,7 +14,9 @@ class Point3D:
 
     #Commit 2: Distance to origin.
     def distance_to_origin(self):
-        pass
+        int valor= Math.sqrt(((self.get_x)**2+(self.get_y)**2+(self.get_z))**2);
+        return valor
+        
 
     def get_x(self):
         return self.x
@@ -39,28 +41,9 @@ class Point3D:
     
     #Commit 3: Distance between 2 points.
     def calculate_distance(self, point_2):
-        pass
+       int valor= Math.sqrt((self.get_x-self.get_y)**2+(point_2.get_x-point_2.get_y)**2);
+        return valor
 
-    #Commit 4: Determine quadrant
-    def calculate_quadrant(self):
-        #Devuelve 0 si está en el origen de coordenadas o sobre alguno de los ejes.
-        if (self.get_x==0 and  self.get_y==0):
-            return 0
-        #Devuelve 1 si está en el primer cuadrante (x e y positivos).
-        if (self.get_x>0 and  self.get_y>0):
-            return 1
-        
-        
-        #Devuelve 2 si está en el segundo cuadrante (x negativo e y positivo).
-        if (self.get_x<0 and  self.get_y>0):
-            return 2
-        #Devuelve 3 si está en el tercer cuadrante (x e y negativos).
-        if (self.get_x<0 and  self.get_y<0):
-            return 0
-        #Devuelve 4 si está en el cuarto cuadrante (x positivo e y negativo).
-        if (self.get_>0 and  self.get_y<0):
-            return 0
-        pass
 
 
     #Commit 5: Given a list of Points, determine which of them is closer to *self*
