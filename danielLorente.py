@@ -33,7 +33,7 @@ class Point3D:
 
     #Commit 2: Distance to origin.
     def distance_to_origin(self):
-        pass
+        return sqrt((x2 - x1)**2 + (y2 - y1)**2 + (z2 - z1)**2)
 
 
     #Commit 3: Distance between 2 points.
