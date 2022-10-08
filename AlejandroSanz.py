@@ -64,8 +64,14 @@ class Point3D:
 
     #Commit 5: Given a list of Points, determine which of them is closer to *self*
     def get_closest_point(self, points):
-        pass
-
+        cont = 9999999
+        
+        for point_2 in points:
+        if(math.sqrt((point_2.get_x - self.x)**2 + (point_2.get_y - self.y)**2 + (point_2.get_z - self.z)**2) < cont):
+        cont = math.sqrt((point_2.get_x - self.x)**2 + (point_2.get_y - self.y)**2 + (point_2.get_z - self.z)**2)
+        point_closer = point_2
+        return point_closer
+        
 
 if __name__ == "__main__":
     pass
