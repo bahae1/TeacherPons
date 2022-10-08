@@ -9,10 +9,10 @@ class Point3D:
         self.x = x
         self.y = y
         self.z = z
-        
+            
     def get_x(self):
     	return self.x
-    	
+    
     def set_x(self, x):
     	self.x = x
     	
@@ -28,18 +28,19 @@ class Point3D:
     def set_z(self, z):
     	self.z = z
     	
-    def __str__(self, x, y, z):
-    	return "X: " + str(self.get_x()) + ", Y: " + str(self.get_y()) + ", Z: " + str(self.get_z())
-    	
+    def __str__(self):
+    	return 'X=' + str(self.x) + ',Y=' + str(self.y) + ',Z=' + str(self.z)
 
     #Commit 2: Distance to origin.
     def distance_to_origin(self):
-        return math.sqrt(self.get_x()**2+self.get_y()**2+self.get_z()**2)
+        return math.sqrt((pow(self.get_x())+pow(self.get_y())+pow(self.get_x))
+        
+        
 
 
     #Commit 3: Distance between 2 points.
     def calculate_distance(self, point_2):
-        return math.sqrt((point_2.get_x()-self.get_x())**2+(point_2.get_y()-self.get_y())**2)
+        pass
 
     #Commit 4: Determine quadrant
     def calculate_quadrant(self):
