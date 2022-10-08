@@ -1,43 +1,57 @@
-from math import *
+#from numpy import sqrt
 
 
 class Point3D:
 
+
     #A point is defined by 3 coordinates
     def __init__(self, x, y, z):
-        self.x=x
-        self.y=y
-        self.z=z
-        
+        self.x = x
+        self.y = y
+        self.z = z
+
+
+    def __init__(self):
+        pass
 
 
     #Commit 1: __init__(constructor), setters, getters and __str__ (tostring)
-
-    def get_X(self):
+    def getX(self):
         return self.x
-    
-    def get_Y(self):
+
+    def setX(self, x):
+        self.x = x
+
+
+    def getY(self):
         return self.y
-    
-    def get_Z(self):
+
+    def setY(self, y):
+        self.y = y
+
+
+    def getZ(self):
         return self.z
 
-    def set_X(self,x):
-        self.x=x
-    
-    def set_Y(self,y):
-        self.y=y
+    def setZ(self, z):
+        self.z = z
 
-    def set_Z(self,z):
-        self.z=z
+
 
     def __str__(self):
-        return "X:"+str(self.x)+" Y:"+str(self.y)+" Z:"+str(self.z)
+        return self.x + ", " + self.y + ", " + self.z
+
+
+
+
+
+
 
     #Commit 2: Distance to origin.
     def distance_to_origin(self):
-        int valor= Math.sqrt(((self.get_x)**2+(self.get_y)**2+(self.get_z))**2);
-        return valor
+        return math.sqrt(
+        math.sqrt((self.x)^2 + (self.y)^2)
+         + (self.z)^2)
 
 
     #Commit 3: Distance between 2 points.
@@ -57,3 +71,7 @@ class Point3D:
     #Commit 5: Given a list of Points, determine which of them is closer to *self*
     def get_closest_point(self, points):
         pass
+
+
+if __name__ == "__main__":
+    pass
