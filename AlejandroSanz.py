@@ -1,5 +1,6 @@
 #from numpy import sqrt
 
+import math
 
 class Point3D:
 
@@ -34,12 +35,12 @@ class Point3D:
 
     #Commit 2: Distance to origin.
     def distance_to_origin(self):
-        pass
+        return math.sqrt(self.x**2 + self.y**2 + self.z**2)
 
 
     #Commit 3: Distance between 2 points.
     def calculate_distance(self, point_2):
-        pass
+        return math.sqrt((point_2.get_x - self.x)**2 + (point_2.get_y - self.y)**2 + (point_2.get_z - self.z)**2)
 
     #Commit 4: Determine quadrant
     def calculate_quadrant(self):
@@ -48,7 +49,17 @@ class Point3D:
         #Devuelve 2 si está en el segundo cuadrante (x negativo e y positivo).
         #Devuelve 3 si está en el tercer cuadrante (x e y negativos).
         #Devuelve 4 si está en el cuarto cuadrante (x positivo e y negativo).
-        pass
+        
+        if self.x>0 and self.y>0:
+        return 1
+        elif self.x<0 and self.y>0:
+        return 2
+        elif self.x<0 and self.y<0:
+        return 3
+        elif self.x>0 and self.y<0:
+        return 4
+        else
+        return 0
 
 
     #Commit 5: Given a list of Points, determine which of them is closer to *self*
