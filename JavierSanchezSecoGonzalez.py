@@ -1,8 +1,8 @@
-
-
+import math
+#Espero qu funcione este commit porque sino la camiseta se la va a llevar Piter
 class Point3D:
 
-    #A point is defined by 3 coordinates
+    #A point is defined by 3 coordinates(x, y , z)
     #Commit 1: __init__(constructor), setters, getters and __str__ (tostring)
     def __init__(self, punt_x, punt_y, punt_z):
         self.punt_x = punt_x
@@ -43,17 +43,28 @@ class Point3D:
 
     #Commit 4: Determine quadrant
     def calculate_quadrant(self):
-        #Devuelve 0 si está en el origen de coordenadas o sobre alguno de los ejes.
-        #Devuelve 1 si está en el primer cuadrante (x e y positivos).
-        #Devuelve 2 si está en el segundo cuadrante (x negativo e y positivo).
-        #Devuelve 3 si está en el tercer cuadrante (x e y negativos).
-        #Devuelve 4 si está en el cuarto cuadrante (x positivo e y negativo).
-        pass
+        if self.get_x() == 0 or self.get_y() == 0 or self.get_z() == 0:
+            return 0
+        if self.get_x() > 0 and self.get_y() > 0:
+            return 1
+        if self.get_x() < 0 and self.get_y() > 0:
+            return 2
+        if self.get_x() < 0 and self.get_y() < 0:
+            return 3
+        if self.get_x() > 0 and self.get_y() < 0:
+            return 4
 
 
     #Commit 5: Given a list of Points, determine which of them is closer to *self*
     def get_closest_point(self, points):
-        pass
+        closest_distance = sys.maxsize
+        posible_point = None
+        for point in points:
+            distance = self.calculate_distance(point)
+            if distance < closest_distance:
+                posible_point = point
+                closest_distance = distance
+        return posible_point
 
 
 if __name__ == "__main__":
