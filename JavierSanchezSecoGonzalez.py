@@ -1,8 +1,8 @@
 import math
-
+#Espero qu funcione este commit porque sino la camiseta se la va a llevar Piter
 class Point3D:
 
-    #A point is defined by 3 coordinates
+    #A point is defined by 3 coordinates(x, y , z)
     #Commit 1: __init__(constructor), setters, getters and __str__ (tostring)
     def __init__(self, punt_x, punt_y, punt_z):
         self.punt_x = punt_x
