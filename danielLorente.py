@@ -52,8 +52,27 @@ class Point3D:
 
     #Commit 5: Given a list of Points, determine which of them is closer to *self*
     def get_closest_point(self, points):
-        pass
+        distanciaMinima = 9999
+        distanciaFinal = 0
+        
+        for punto in points:
+        	distancia = calculate_distance(self, punto)
+        	if(distancia < distanciaMinima)
+        		distanciaFinal = distancia
+        		distanciaMinima = distancia
 
 
 if __name__ == "__main__":
     pass
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
