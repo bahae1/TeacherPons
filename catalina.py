@@ -16,3 +16,34 @@ class Gravity(object):
         g = self.force(r)
         title='Gravity force: m=%g, M=%g' % (self.m, self.M)
         plot(r, g, title=title)
+
+   class IntervalMath(object):
+    def __init__(self, lower, upper):
+        self.lo = float(lower)
+        self.up = float(upper)
+
+    def __add__(self, other):
+        a, b, c, d = self.lo, self.up, other.lo, other.up
+        return IntervalMath(a + c, b + d)
+
+    def __sub__(self, other):
+        a, b, c, d = self.lo, self.up, other.lo, other.up
+        return IntervalMath(a - d, b - c)
+
+    def __mul__(self, other):
+        a, b, c, d = self.lo, self.up, other.lo, other.up
+        return IntervalMath(min(a*c, a*d, b*c, b*d),
+                            max(a*c, a*d, b*c, b*d))
+
+    def __div__(self, other):
+        a, b, c, d = self.lo, self.up, other.lo, other.up
+        # [c,d] cannot contain zero:
+        if c*d <= 0:
+            raise ValueError\ 
+                  ('Interval %s cannot be denominator because '\ 
+                  'it contains zero' % other)
+        return IntervalMath(min(a/c, a/d, b/c, b/d),
+                            max(a/c, a/d, b/c, b/d))
+
+    def __str__(self):
+        return '[%g, %g]' % (self.lo, self.up)
