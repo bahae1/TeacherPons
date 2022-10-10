@@ -20,3 +20,25 @@ class Complex(object):
                          other.real, other.imag # short forms
         r = float(or**2 + oi**2)
         return Complex((sr*or+si*oi)/r, (si*or-sr*oi)/r)
+    
+    def __abs__(self):
+        return sqrt(self.real**2 + self.imag**2)
+
+    def __neg__(self):   # defines -c (c is Complex)
+        return Complex(-self.real, -self.imag)
+
+    def __eq__(self, other):
+        return self.real == other.real and self.imag == other.imag
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
+    def __str__(self):
+        return '(%g, %g)' % (self.real, self.imag)
+
+    def __repr__(self):
+        return 'Complex' + str(self)
+
+    def __pow__(self, power):
+        raise NotImplementedError\ 
+              ('self**power is not yet impl. for Complex')
