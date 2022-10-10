@@ -15,3 +15,17 @@ class Leader:
         self.set_limit = 5 #attempts in every candle
         self.symbol = symbol
         self.chat_id = "-1001672482817" #TOP/BOT signals
+        
+ 
+class circulo():
+	def __init__(self,radio):
+		self.set_radio(radio)
+	def set_radio(self,radio):
+		if radio>=0:
+			self._radio = radio
+		else:
+			raise ValueError("Radio positivo")
+			self._radio=0
+	def get_radio(self):
+		print("Estoy dando el radio")
+		return self._radio
