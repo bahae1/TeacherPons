@@ -39,7 +39,7 @@ class Point3D:
     		
     #Commit 2: Distance to origin.
     def distance_to_origin(self):
-    	return math.sqrt(self.get_cordX()**2+self.get_ycordY)**2+self.get_cordZ()**2)
+    	return math.sqrt(self.get_cordX()**2+self.get_cordY)**2+self.get_cordZ()**2)
 
 
     #Commit 3: Distance between 2 points.
