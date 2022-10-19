@@ -45,7 +45,16 @@ class Point3D:
         return math.sqrt((point_2.get_X() - self.get_X())**2 + (point_2.get_Y - self.get_Y())**2 + (point2.get_Z - self.get_Z)**2)
     #Commit 4: Determine quadrant
     def calculate_quadrant(self):
-        pass
+        if (self.get_X() == 0 or self.get_Y == 0):
+            return 0;
+        if (self.get_X() > 0 and self.get_Y > 0):
+            return 1;
+        if (self.get_X() < 0 and self.get_Y > 0):
+            return 2;
+        if (self.get_X() < 0 and self.get_Y < 0):
+            return 3;
+        if (self.get_X() > 0 and self.get_Y < 0):
+            return 4;
 
 
     #Commit 5: Given a list of Points, determine which of them is closer to *self*
