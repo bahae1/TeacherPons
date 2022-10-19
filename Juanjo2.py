@@ -36,7 +36,8 @@ class Point3D:
 
     #Commit 2: Distance to origin.
     def distance_to_origin(self):
-        pass
+        int valor= math.sqrt(((self.get_X)**2+(self.get_Y)**2+(self.get_Z))**2);
+        return valor
 
 
     #Commit 3: Distance between 2 points.
