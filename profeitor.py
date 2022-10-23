@@ -29,3 +29,15 @@ class Point3D:
 
     def get_z(self, z):
 	self.z = z
+	
+    fet __str__(self):
+	return 'Punto 3D (x=' + str(self.get_X()) +', y=' + str(self.get_y()) +', z=' + str(self.get_z()) +')'
+
+    #Commit 2: Distance to origin.
+    def distance_to_origin(self):
+        pass
+
+
+    #Commit 3: Distance between 2 points.
+    def calculate_distance(self, point_2):
+        pass
