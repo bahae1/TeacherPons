@@ -41,3 +41,21 @@ class Point3D:
     #Commit 3: Distance between 2 points.
     def calculate_distance(self, point_2):
         return math.sqrt((point_2.get_X() - self.get_X())**2 + (point_2.get_Y - self.get_Y())**2 + (point2.get_Z - self.get_Z)**2)
+    
+     #Commit 4: Determine quadrant
+    def calculate_quadrant(self):
+     	#Devuelve 0 si está en el origen de coordenadas o sobre alguno de los ejes.
+        if (self.get_X() == 0 or self.get_Y == 0):
+        return 0;
+        #Devuelve 1 si está en el primer cuadrante (x e y positivos).
+        if (self.get_X() > 0 and self.get_Y > 0):
+        return 1;
+        #Devuelve 2 si está en el segundo cuadrante (x negativo e y positivo).
+        if (self.get_X() < 0 and self.get_Y > 0):
+        return 2;
+        #Devuelve 3 si está en el tercer cuadrante (x e y negativos).
+        if (self.get_X() < 0 and self.get_Y < 0):
+        return 3;
+        #Devuelve 4 si está en el cuarto cuadrante (x positivo e y negativo).
+       	if (self.get_X() > 0 and self.get_Y < 0):
+        return 4;
