@@ -33,6 +33,8 @@ class Point3D:
         return "X: " + str(self.x) + ",Y: " + str(self.y) + ",Z: " + str(self.z)
     
     
+    
+    
         
 
     #Commit 2: Distance to origin.
@@ -51,16 +53,16 @@ class Point3D:
         #Devuelve 2 si está en el segundo cuadrante (x negativo e y positivo).
         #Devuelve 3 si está en el tercer cuadrante (x e y negativos).
         #Devuelve 4 si está en el cuarto cuadrante (x positivo e y negativo).
-         if self.x>0 and self.y>0:
-        return 1
+        if self.x>0 and self.y>0:
+            return 1
         elif self.x<0 and self.y>0:
-        return 2
+            return 2
         elif self.x<0 and self.y<0:
-        return 3
+            return 3
         elif self.x>0 and self.y<0:
-        return 4
+            return 4
         else
-        return 0
+            return 0
 
 
     #Commit 5: Given a list of Points, determine which of them is closer to *self*
@@ -68,11 +70,25 @@ class Point3D:
         cont = 9999999
         
         for point_2 in points:
-        if(math.sqrt((point_2.get_x - self.x)**2 + (point_2.get_y - self.y)**2 + (point_2.get_z - self.z)**2) < cont):
-        cont = math.sqrt((point_2.get_x - self.x)**2 + (point_2.get_y - self.y)**2 + (point_2.get_z - self.z)**2)
-        point_closer = point_2
+            if(math.sqrt((point_2.get_x - self.x)**2 + (point_2.get_y - self.y)**2 + (point_2.get_z - self.z)**2) < cont):
+                cont = math.sqrt((point_2.get_x - self.x)**2 + (point_2.get_y - self.y)**2 + (point_2.get_z - self.z)**2)
+                point_closer = point_2
         return point_closer
-        
+    
+    class Reverse:
+    """Iterator for looping over a sequence backwards."""
+    def __init__(self, data):
+        self.data = data
+        self.index = len(data)
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.index == 0:
+            raise StopIteration
+        self.index = self.index - 1
+        return self.data[self.index]
 
 if __name__ == "__main__":
     pass
