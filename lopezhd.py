@@ -28,3 +28,16 @@ class Point3D:
     	
     def set_Z (self,z):
     	self.z = z
+
+        
+    def __str__(self):
+    	return "Valores: X: " + str(self.get_X()) + ", Y: " + str(self.get_Y()) + ", Z: " + str(self.get_Z())
+
+    #Commit 2: Distance to origin.
+    def distance_to_origin(self):
+        return math.sqrt(self.get_X()**2 + self.get_Y()**2 + self.get_Z()**2)
+
+
+    #Commit 3: Distance between 2 points.
+    def calculate_distance(self, point_2):
+        return math.sqrt((point_2.get_X() - self.get_X())**2 + (point_2.get_Y - self.get_Y())**2 + (point2.get_Z - self.get_Z)**2)
