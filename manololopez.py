@@ -36,3 +36,17 @@ class Point3D:
     #Commit 2: Distance to origin.
     def distance_to_origin(self):
         return math.sqrt(self.x**2 + self.y**2 + self.z**2)
+    
+    
+      #Commit 3: Distance between 2 points.
+    def calculate_distance(self, point_2):
+        return math.sqrt((point_2.get_x - self.x)**2 + (point_2.get_y - self.y)**2 + (point_2.get_z - self.z)**2)
+
+    #Commit 4: Determine quadrant
+    def calculate_quadrant(self):
+        #Devuelve 0 si está en el origen de coordenadas o sobre alguno de los ejes.
+        #Devuelve 1 si está en el primer cuadrante (x e y positivos).
+        #Devuelve 2 si está en el segundo cuadrante (x negativo e y positivo).
+        #Devuelve 3 si está en el tercer cuadrante (x e y negativos).
+        #Devuelve 4 si está en el cuarto cuadrante (x positivo e y negativo).
+        pass
